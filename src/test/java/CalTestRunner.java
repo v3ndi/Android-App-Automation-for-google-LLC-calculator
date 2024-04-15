@@ -5,8 +5,8 @@ public class CalTestRunner extends Setup{
     @Test(priority = 1,description = "do addition")
     public void doSeries(){
         CalScreen calScreen =new CalScreen(driver);
-        String value = calScreen.doSeries(0,1,5,6);
-        System.out.println(value);
-        Assert.assertEquals(value,"100");
+        int actualResult = Integer.parseInt(calScreen.calculateSeries("50+10-20*2+10/2"));
+        int expectedResult = 25;
+        Assert.assertEquals(actualResult,expectedResult);
     }
 }
